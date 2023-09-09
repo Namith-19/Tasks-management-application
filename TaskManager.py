@@ -1,10 +1,10 @@
 import customtkinter as tk
 import mysql.connector as mysql
-conn = mysql.connect(host="localhost", user="root", password="namit")
+conn = mysql.connect(host="localhost", user="root", password="\your Database passcode\")
 cur = conn.cursor()
 
 
-def checkDB():
+def checkDB(): #Checking for requirements of database
     try:
         cur.execute("use alexa;")
         try:
@@ -154,8 +154,6 @@ GetButton=tk.CTkButton(MainFrame,text="Get Tasks",fg_color="#2b405f",corner_radi
 GetButton.pack(side="left",padx=5,pady=10)
 DelButton=tk.CTkButton(MainFrame,text="Delete Completed",fg_color="#2b405f",corner_radius=18,border_width=0,command=delTask)
 DelButton.pack(side="left",padx=5,pady=10)
-
-
 
 ErrorLb=tk.CTkLabel(app,text="")
 ErrorLb.pack(side="top")
